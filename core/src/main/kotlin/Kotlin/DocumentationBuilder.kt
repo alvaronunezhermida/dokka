@@ -713,7 +713,7 @@ class DocumentationBuilder
     }
 
     fun FunctionDescriptor.build(external: Boolean = false): DocumentationNode {
-        if (ErrorUtils.containsErrorType(this)) {
+        if (ErrorUtils.containsErrorTypeInParameters(this) || ErrorUtils.containsErrorType(this.returnType)) { //TODO check
             logger.warn("Found an unresolved type in ${signatureWithSourceLocation()}")
         }
 

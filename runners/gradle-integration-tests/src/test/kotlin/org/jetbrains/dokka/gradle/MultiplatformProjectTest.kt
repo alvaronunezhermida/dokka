@@ -41,7 +41,7 @@ class MultiplatformProjectTest : AbstractDokkaGradleTest() {
     }
 
     @Test fun `test kotlin 1_3_30 and gradle 4_7`() {
-        doTest("4.7", "1.3.30")
+        doTest("4.9", "1.3.30")
     }
 
     @Test fun `test kotlin 1_3_40 and gradle 4_10_3`() {

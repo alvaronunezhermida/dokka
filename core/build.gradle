@@ -28,12 +28,14 @@ dependencies {
     compile "org.jetbrains.kotlin:kotlin-compiler:$bundled_kotlin_compiler_version"
     compile "org.jetbrains.kotlin:kotlin-script-runtime:$bundled_kotlin_compiler_version"
 
-    compile "teamcity:kotlin-ide-common:$bundled_kotlin_compiler_version"
+
+//    compile "teamcity:kotlin-ide-common:$bundled_kotlin_compiler_version"
     compile "org.jetbrains:markdown:$markdownVersion"
 
     compile intellijCoreAnalysis()
-    
-    compile kotlinPluginDependency()
+
+//    compile "org.jetbrains.kotlin:ide-common-ij193:1.3.61-release-180"
+    compile "org.jetbrains.kotlin:kotlin-plugin-ij193:1.3.61-release-180"
 
     compile 'org.jetbrains.kotlinx:kotlinx-html-jvm:0.6.8'
 
