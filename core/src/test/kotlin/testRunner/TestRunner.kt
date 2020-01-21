@@ -35,7 +35,8 @@ abstract class AbstractCoreTest {
             configuration.copy(
                 outputDir = tempDir.root.toPath().toAbsolutePath().toString()
             )
-        DokkaTestGenerator(newConfiguration, logger, testMethods).generate()
+        DokkaTestGenerator(newConfiguration, logger, testMethods)
+            .generate()
     }
 
     protected fun testInline(
@@ -56,11 +57,12 @@ abstract class AbstractCoreTest {
                 passesConfigurations = configuration.passesConfigurations
                     .map { it.copy(sourceRoots = it.sourceRoots.map { it.copy(path = "${testDirPath.toAbsolutePath()}/${it.path}") }) }
             )
-        DokkaTestGenerator(newConfiguration, logger, testMethods).generate()
+        DokkaTestGenerator(newConfiguration, logger, testMethods)
+            .generate()
     }
 
-    private fun String.toFileMap(): Map<String, String> = this.replace("\r\n", "\n")
-        .split("\n/")
+    private fun String.toFileMap(): Map<String, String> = this.trimMargin("|")
+        .replace("\r\n", "\n").split("\n/")
         .map { fileString ->
             fileString.split("\n", limit = 2)
                 .let {
